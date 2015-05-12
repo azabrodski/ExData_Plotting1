@@ -9,7 +9,8 @@ dates <- paste(df$Date, df$Time, sep = " ")
 dates <- dmy_hms(dates)
 df$Date_Time <- dates
 x <- df$Date_Time
-#png(filename = "Plot4.png", width = 480, height = 480)
+
+png(filename = "Plot4.png", width = 480, height = 480)
 par(mfrow=c(2,2))
 
 plot(x,df$Global_active_power, type = "n", xlab = "", ylab = "Global Active Power (kilowatts)")
@@ -28,6 +29,6 @@ legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_
 plot(x,df$Global_reactive_power, type = "n", xlab = "datetime", ylab = "Global_reactive_power")
 lines(x,df$Global_reactive_power)
 
-#dev.off()
+dev.off()
 
 
